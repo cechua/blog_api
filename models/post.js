@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
 const { DateTime } = require("luxon");
 const Schema = mongoose.Schema;
-
+const User = require("./user");
 const PostSchema = new Schema({
   title: { type: String, required: true },
   content: { type: String, required: true },
   postedDate: { type: Date, default: Date.now },
-  user: { type: Schema.Types.ObjectId, ref: "User", required: true },
+  postedBy: { type: Schema.Types.ObjectId, ref: "User", required: true },
   comments: [{ type: Schema.Types.ObjectId, ref: "Comment" }],
   likeCount: { type: Number, default: 0 },
   likedBy: [{ type: Schema.Types.ObjectId, ref: "User" }],

@@ -14,7 +14,7 @@ db.on("error", console.error.bind(console, "mongo connection error"));
 
 //add frontend url to allow access
 let corsOptions = {
-  origin: ["http://localhost:3000"],
+  origin: ["*"],
   optionsSuccessStatus: 200,
 };
 
